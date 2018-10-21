@@ -9,7 +9,9 @@ var fields []string
 var input string
 
 // Add id to the end of waiters
-func Add_waiter (id string) { waiters = append (waiters, id) }
+func Add_waiter (id string) { 
+    if Get_position(id) == -1 { waiters = append (waiters, id) }
+}
 
 // Remove element from waiters with val = id if it exists. Return true if value 
 // removed was the first element
